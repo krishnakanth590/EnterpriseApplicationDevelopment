@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pageflow:Pageflow xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pageflow="http://www.sybase.com/suade/pageflow" id="pf14158267443930" configfile="/f14g26/WebContent/WEB-INF/faces-config.xml">
+  <nodes xsi:type="pageflow:PFPage" name="login" x="338" y="562" id="pf14158287414500" referenceLink="//@navigationRule.4/@navigationCase.0/@toViewId|" outlinks="pf14158287414501 pf14158287414502 pf14158287414503" inlinks="pf14158287414503 pf14158287414504 pf14158287414505 pf14158287414506 pf14158287414507" path="/login.jsp"/>
+  <nodes xsi:type="pageflow:PFPage" name="NormalHome" x="554" y="367" id="pf14158287414518" referenceLink="//@navigationRule.10/@fromViewId|" outlinks="pf14161911613510" inlinks="pf14158287414501 pf14158287414519" path="/NormalHome.jsp"/>
+  <nodes xsi:type="pageflow:PFPage" name="AdminHome" x="554" y="751" id="pf141582874145110" referenceLink="//@navigationRule.9/@fromViewId|" outlinks="pf141582874145111" inlinks="pf14158287414502 pf141582874145112" path="/AdminHome.jsp"/>
+  <nodes xsi:type="pageflow:PFPage" name="register" x="122" y="178" id="pf141582874145113" referenceLink="//@navigationRule.1/@navigationCase.1/@toViewId|" outlinks="pf14158287414504 pf141582874145114" inlinks="pf141582874145114" path="/register.jsp"/>
+  <nodes xsi:type="pageflow:PFPage" name="AdminTools" x="770" y="932" id="pf141582874145115" referenceLink="//@navigationRule.2/@fromViewId|" outlinks="pf141582874145116 pf141582874145117 pf141582874145218 pf141582874145219 pf141582874145220 pf141582874145221 pf141582874145222 pf141582874145223 pf141582874145224 pf141582874145225 pf141582874145226 pf141582874145227" path="/AdminTools.jsp"/>
+  <nodes xsi:type="pageflow:PFPage" name="AdminActionResponse" x="986" y="932" id="pf141582874145228" referenceLink="//@navigationRule.11/@navigationCase.3/@toViewId|" inlinks="pf141582874145116 pf141582874145117 pf141582874145218 pf141582874145219 pf141582874145220 pf141582874145221 pf141582874145222 pf141582874145223 pf14160090383266 pf14160090383267" path="/AdminActionResponse.jsp"/>
+  <nodes xsi:type="pageflow:PFPage" name="ViewUsers" x="986" y="1316" id="pf141582874145229" referenceLink="//@navigationRule.2/@navigationCase.9/@toViewId|" inlinks="pf141582874145224 pf141582874145225" path="/ViewUsers.jsp"/>
+  <nodes xsi:type="pageflow:PFPage" name="ViewUserLog" x="986" y="1700" id="pf141582874145230" referenceLink="//@navigationRule.2/@navigationCase.11/@toViewId|" inlinks="pf141582874145226 pf141582874145227" path="/ViewUserLog.jsp"/>
+  <nodes xsi:type="pageflow:PFPage" name="*" x="122" y="562" id="pf141582874145331" referenceLink="//@navigationRule.5/@fromViewId|" outlinks="pf14158287414505 pf14158287414506 pf14158287414507 pf14158287414519 pf141582874145112" path="*"/>
+  <nodes xsi:type="pageflow:PFPage" name="SessionInfo" x="122" y="1041" id="pf141582874145332" referenceLink="//@navigationRule.6/@fromViewId|" outlinks="pf141582874145333 pf141582874145334" path="SessionInfo.jsp"/>
+  <nodes xsi:type="pageflow:PFPage" name="SessionInfo" x="338" y="1041" id="pf141582874145335" referenceLink="//@navigationRule.6/@navigationCase.1/@toViewId|" inlinks="pf141582874145333 pf141582874145334" path="/SessionInfo.jsp"/>
+  <nodes xsi:type="pageflow:PFPage" name="FileImport" x="338" y="1425" id="pf141582874145336" referenceLink="//@navigationRule.8/@navigationCase.1/@toViewId|" outlinks="pf141582874145337 pf14161911752811" inlinks="pf141582874145338 pf14161911752811 pf14161938128663" path="/FileImport.jsp"/>
+  <nodes xsi:type="pageflow:PFPage" name="FileImportParse" x="122" y="1425" id="pf141582874145340" referenceLink="//@navigationRule.8/@fromViewId|" outlinks="pf141582874145338 pf14161938128663" inlinks="pf141582874145337" path="/FileImportParse.jsp"/>
+  <nodes xsi:type="pageflow:PFPage" name="ExamineTables" x="770" y="548" id="pf141582874145441" referenceLink="//@navigationRule.11/@fromViewId|" outlinks="pf141582874145442 pf141582874145443 pf14160090383266 pf14160090383267" inlinks="pf141582874145111 pf141582874145442 pf141582874145443 pf14161911613510" path="/ExamineTables.jsp"/>
+  <nodes xsi:type="pageflow:PFPage" name="PerformAnalysis" x="122" y="1809" id="pf14170818358680" referenceLink="//@navigationRule.12/@navigationCase.3/@toViewId|" outlinks="pf14170818358681 pf14170818358682 pf14170818358683 pf14170818358684" inlinks="pf14170818358681 pf14170818358682 pf14170818358683 pf14170818358684" path="/PerformAnalysis.jsp"/>
+  <links id="pf14158287414501" target="pf14158287414518" source="pf14158287414500" outcome="NORMALUSER"/>
+  <links id="pf14158287414502" target="pf141582874145110" source="pf14158287414500" outcome="ADMINUSER"/>
+  <links id="pf14158287414504" target="pf14158287414500" source="pf141582874145113" outcome="REGISTERED"/>
+  <links id="pf141582874145116" target="pf141582874145228" source="pf141582874145115" outcome="USERTABLECREATED"/>
+  <links id="pf141582874145117" target="pf141582874145228" source="pf141582874145115" outcome="USERTABLENOTCREATED"/>
+  <links id="pf141582874145218" target="pf141582874145228" source="pf141582874145115" outcome="LOGTABLECREATED"/>
+  <links id="pf141582874145219" target="pf141582874145228" source="pf141582874145115" outcome="LOGTABLENOTCREATED"/>
+  <links id="pf141582874145220" target="pf141582874145228" source="pf141582874145115" outcome="USERTABLEDROPPED"/>
+  <links id="pf141582874145221" target="pf141582874145228" source="pf141582874145115" outcome="USERTABLEDROPFAIL"/>
+  <links id="pf141582874145222" target="pf141582874145228" source="pf141582874145115" outcome="LOGTABLESUCCESS"/>
+  <links id="pf141582874145223" target="pf141582874145228" source="pf141582874145115" outcome="LOGTABLEDROPFAIL"/>
+  <links id="pf141582874145224" target="pf141582874145229" source="pf141582874145115" outcome="VIEWUSERSSUCESS"/>
+  <links id="pf141582874145225" target="pf141582874145229" source="pf141582874145115" outcome="VIEWUSERFAIL"/>
+  <links id="pf141582874145226" target="pf141582874145230" source="pf141582874145115" outcome="VIEWLOGSUCESS"/>
+  <links id="pf141582874145227" target="pf141582874145230" source="pf141582874145115" outcome="VIEWLOGFAIL"/>
+  <links id="pf14158287414505" target="pf14158287414500" source="pf141582874145331" outcome="LOGOUTSUCCESS"/>
+  <links id="pf14158287414506" target="pf14158287414500" source="pf141582874145331" outcome="LOGOUTFAIL"/>
+  <links id="pf14158287414507" target="pf14158287414500" source="pf141582874145331" outcome="GOHOME"/>
+  <links id="pf14158287414519" target="pf14158287414518" source="pf141582874145331" outcome="NOTADMIN"/>
+  <links id="pf141582874145112" target="pf141582874145110" source="pf141582874145331" outcome="ISADMIN"/>
+  <links id="pf141582874145333" target="pf141582874145335" source="pf141582874145332" outcome="CONNECTIONFAILED"/>
+  <links id="pf141582874145334" target="pf141582874145335" source="pf141582874145332" outcome="CONNECTIONESTABLISHED"/>
+  <links id="pf141582874145337" target="pf141582874145340" source="pf141582874145336" outcome="IMPORTSUCCESS"/>
+  <links id="pf141582874145338" target="pf141582874145336" source="pf141582874145340" outcome="INSERTSUCCESS"/>
+  <links id="pf141582874145111" target="pf141582874145441" source="pf141582874145110" outcome="EXAMINETABLES"/>
+  <links id="pf14160090383266" target="pf141582874145228" source="pf141582874145441" outcome="TABLEDROPPED"/>
+  <links id="pf14160090383267" target="pf141582874145228" source="pf141582874145441" outcome="TABLEDROPFAILED"/>
+  <links id="pf14161911613510" target="pf141582874145441" source="pf14158287414518" outcome="EXAMINETABLES"/>
+  <links id="pf14161938128663" target="pf141582874145336" source="pf141582874145340" outcome="INSERTFAILED"/>
+  <links id="pf14158287414503" target="pf14158287414500" source="pf14158287414500" outcome="USERDOESNTEXISTS">
+    <bendPoints d1Height="-36" d2Height="-36"/>
+    <bendPoints d1Width="-64" d1Height="-36" d2Width="-64" d2Height="-36"/>
+    <bendPoints d1Width="-64" d2Width="-64"/>
+  </links>
+  <links id="pf141582874145114" target="pf141582874145113" source="pf141582874145113" outcome="REGISTRATIONFAILED">
+    <bendPoints d1Height="-36" d2Height="-36"/>
+    <bendPoints d1Width="-64" d1Height="-36" d2Width="-64" d2Height="-36"/>
+    <bendPoints d1Width="-64" d2Width="-64"/>
+  </links>
+  <links id="pf141582874145442" target="pf141582874145441" source="pf141582874145441" outcome="DISPLAYSUCCESS">
+    <bendPoints d1Height="-36" d2Height="-36"/>
+    <bendPoints d1Width="-64" d1Height="-36" d2Width="-64" d2Height="-36"/>
+    <bendPoints d1Width="-64" d2Width="-64"/>
+  </links>
+  <links id="pf141582874145443" target="pf141582874145441" source="pf141582874145441" outcome="DISPLAYFAIL">
+    <bendPoints d1Height="-66" d2Height="-66"/>
+    <bendPoints d1Width="-94" d1Height="-66" d2Width="-94" d2Height="-66"/>
+    <bendPoints d1Width="-94" d2Width="-94"/>
+  </links>
+  <links id="pf14161911752811" target="pf141582874145336" source="pf141582874145336" outcome="IMPORTFAILED">
+    <bendPoints d1Height="-36" d2Height="-36"/>
+    <bendPoints d1Width="-64" d1Height="-36" d2Width="-64" d2Height="-36"/>
+    <bendPoints d1Width="-64" d2Width="-64"/>
+  </links>
+  <links id="pf14170818358681" target="pf14170818358680" source="pf14170818358680" outcome="CALCSUCCESS">
+    <bendPoints d1Height="-36" d2Height="-36"/>
+    <bendPoints d1Width="-64" d1Height="-36" d2Width="-64" d2Height="-36"/>
+    <bendPoints d1Width="-64" d2Width="-64"/>
+  </links>
+  <links id="pf14170818358682" target="pf14170818358680" source="pf14170818358680" outcome="CALCFAILED">
+    <bendPoints d1Height="-66" d2Height="-66"/>
+    <bendPoints d1Width="-94" d1Height="-66" d2Width="-94" d2Height="-66"/>
+    <bendPoints d1Width="-94" d2Width="-94"/>
+  </links>
+  <links id="pf14170818358683" target="pf14170818358680" source="pf14170818358680" outcome="CHARTSUCCESS">
+    <bendPoints d1Height="-96" d2Height="-96"/>
+    <bendPoints d1Width="-124" d1Height="-96" d2Width="-124" d2Height="-96"/>
+    <bendPoints d1Width="-124" d2Width="-124"/>
+  </links>
+  <links id="pf14170818358684" target="pf14170818358680" source="pf14170818358680" outcome="CHARTFAILED">
+    <bendPoints d1Height="-126" d2Height="-126"/>
+    <bendPoints d1Width="-154" d1Height="-126" d2Width="-154" d2Height="-126"/>
+    <bendPoints d1Width="-154" d2Width="-154"/>
+  </links>
+</pageflow:Pageflow>

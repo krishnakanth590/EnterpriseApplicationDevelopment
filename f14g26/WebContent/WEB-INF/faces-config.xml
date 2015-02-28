@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<faces-config xmlns="http://java.sun.com/xml/ns/javaee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-facesconfig_2_1.xsd"
+	version="2.1">
+	<application>
+		<message-bundle>MyMessage</message-bundle>
+	</application>
+	<!-- For Login screen -->
+	<navigation-rule>
+		<from-view-id>/login.jsp</from-view-id>
+		<navigation-case>
+			<from-outcome>NORMALUSER</from-outcome>
+			<to-view-id>/NormalHome.jsp</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>ADMINUSER</from-outcome>
+			<to-view-id>/AdminHome.jsp</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>USERDOESNTEXISTS</from-outcome>
+			<to-view-id>/login.jsp</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	<!-- For Register screen -->
+	<navigation-rule>
+		<from-view-id>/register.jsp</from-view-id>
+		<navigation-case>
+			<from-outcome>REGISTERED</from-outcome>
+			<to-view-id>/login.jsp</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>REGISTRATIONFAILED</from-outcome>
+			<to-view-id>/register.jsp</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	<!-- For AdminTools screen -->
+	<navigation-rule>
+		<from-view-id>/AdminTools.jsp</from-view-id>
+		<!-- For user table creation -->
+		<navigation-case>
+			<from-outcome>USERTABLECREATED</from-outcome>
+			<to-view-id>/AdminActionResponse.jsp</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>USERTABLENOTCREATED</from-outcome>
+			<to-view-id>/AdminActionResponse.jsp</to-view-id>
+		</navigation-case>
+		<!-- For log table creation -->
+		<navigation-case>
+			<from-outcome>LOGTABLECREATED</from-outcome>
+			<to-view-id>/AdminActionResponse.jsp</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>LOGTABLENOTCREATED</from-outcome>
+			<to-view-id>/AdminActionResponse.jsp</to-view-id>
+		</navigation-case>
+		<!-- For user table drop -->
+		<navigation-case>
+			<from-outcome>USERTABLEDROPPED</from-outcome>
+			<to-view-id>/AdminActionResponse.jsp</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>USERTABLEDROPFAIL</from-outcome>
+			<to-view-id>/AdminActionResponse.jsp</to-view-id>
+		</navigation-case>
+		<!-- For log table drop -->
+		<navigation-case>
+			<from-outcome>LOGTABLESUCCESS</from-outcome>
+			<to-view-id>/AdminActionResponse.jsp</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>LOGTABLEDROPFAIL</from-outcome>
+			<to-view-id>/AdminActionResponse.jsp</to-view-id>
+		</navigation-case>
+		<!-- For view users -->
+		<navigation-case>
+			<from-outcome>VIEWUSERSSUCESS</from-outcome>
+			<to-view-id>/ViewUsers.jsp</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>VIEWUSERFAIL</from-outcome>
+			<to-view-id>/ViewUsers.jsp</to-view-id>
+		</navigation-case>
+		<!-- For view user log -->
+		<navigation-case>
+			<from-outcome>VIEWLOGSUCESS</from-outcome>
+			<to-view-id>/ViewUserLog.jsp</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>VIEWLOGFAIL</from-outcome>
+			<to-view-id>/ViewUserLog.jsp</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	<!-- For logout -->
+	<navigation-rule>
+		<from-view-id>*</from-view-id>
+		<navigation-case>
+			<from-outcome>LOGOUTSUCCESS</from-outcome>
+			<to-view-id>/login.jsp</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>LOGOUTFAIL</from-outcome>
+			<to-view-id>/login.jsp</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	<!-- Rule for after logout -->
+	<navigation-rule>
+		<from-view-id>*</from-view-id>
+		<navigation-case>
+			<from-outcome>GOHOME</from-outcome>
+			<to-view-id>/login.jsp</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	<!-- For any screen to go back to Admin or Normal Home Screen -->
+	<navigation-rule>
+		<from-view-id>*</from-view-id>
+		<navigation-case>
+			<from-outcome>NOTADMIN</from-outcome>
+			<to-view-id>/NormalHome.jsp</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>ISADMIN</from-outcome>
+			<to-view-id>/AdminHome.jsp</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	<!-- For session info Screen -->
+	<navigation-rule>
+		<from-view-id>SessionInfo.jsp</from-view-id>
+		<navigation-case>
+			<from-outcome>CONNECTIONFAILED</from-outcome>
+			<to-view-id>/SessionInfo.jsp</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>CONNECTIONESTABLISHED</from-outcome>
+			<to-view-id>/SessionInfo.jsp</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	<!-- For File Import Screen -->
+	<navigation-rule>
+		<from-view-id>/FileImport.jsp</from-view-id>
+		<navigation-case>
+			<from-outcome>IMPORTSUCCESS</from-outcome>
+			<to-view-id>/FileImportParse.jsp</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>IMPORTFAILED</from-outcome>
+			<to-view-id>/FileImport.jsp</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	<!-- For File Import Parse Screen -->
+	<navigation-rule>
+		<from-view-id>/FileImportParse.jsp</from-view-id>
+		<navigation-case>
+			<from-outcome>INSERTSUCCESS</from-outcome>
+			<to-view-id>/FileImport.jsp</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>INSERTFAILED</from-outcome>
+			<to-view-id>/FileImport.jsp</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	<!-- For Examine Tables (both admin and normal user) -->
+	<navigation-rule>
+		<from-view-id>/AdminHome.jsp</from-view-id>
+		<navigation-case>
+			<from-outcome>EXAMINETABLES</from-outcome>
+			<to-view-id>/ExamineTables.jsp</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<from-view-id>/NormalHome.jsp</from-view-id>
+		<navigation-case>
+			<from-outcome>EXAMINETABLES</from-outcome>
+			<to-view-id>/ExamineTables.jsp</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	<!-- For Examine tables -->
+	<navigation-rule>
+		<from-view-id>/ExamineTables.jsp</from-view-id>
+		<navigation-case>
+			<from-outcome>DISPLAYSUCCESS</from-outcome>
+			<to-view-id>/ExamineTables.jsp</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>DISPLAYFAIL</from-outcome>
+			<to-view-id>/ExamineTables.jsp</to-view-id>
+		</navigation-case>
+
+		<navigation-case>
+			<from-outcome>TABLEDROPPED</from-outcome>
+			<to-view-id>/AdminActionResponse.jsp</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>TABLEDROPFAILED</from-outcome>
+			<to-view-id>/AdminActionResponse.jsp</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	<!-- For PerformAnalysis page -->
+	<navigation-rule>
+		<from-view-id>/PerformAnalysis.jsp</from-view-id>
+		<navigation-case>
+			<from-outcome>CALCSUCCESS</from-outcome>
+			<to-view-id>/PerformAnalysis.jsp</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>CALCFAILED</from-outcome>
+			<to-view-id>/PerformAnalysis.jsp</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>CHARTSUCCESS</from-outcome>
+			<to-view-id>/PerformAnalysis.jsp</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>CHARTFAILED</from-outcome>
+			<to-view-id>/PerformAnalysis.jsp</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+</faces-config>
